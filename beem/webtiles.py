@@ -1,10 +1,10 @@
 """Creating and managing WebTiles websocket connections."""
 
 import asyncio
-if hasattr(asyncio, "async"):
-    ensure_future = asyncio.async
-else:
-    ensure_future = asyncio.ensure_future
+if hasattr(asyncio, 'ensure_future'):
+  ensure_future = asyncio.ensure_future
+else:  # use of async keyword has been Deprecated since Python 3.4.4
+  ensure_future =  getattr(asyncio, "async")
 
 import logging
 import os
