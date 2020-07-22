@@ -8,7 +8,6 @@ else:  # use of async keyword has been Deprecated since Python 3.4.4
 
 import base64
 import irc.client
-import irc.functools as irc_functools
 import logging
 import os
 import signal
@@ -543,7 +542,7 @@ class ServerConnection(irc.client.ServerConnection):
     complete, the authenticated property will be True."""
 
     # save the method args to allow for easier reconnection.
-    @irc_functools.save_method_args
+    #@irc_functools.save_method_args
     def connect(self, server, port, nickname, username=None, password=None,
                 ircname=None, capabilities=[],
                 connect_factory=irc.connection.Factory()):
